@@ -137,21 +137,21 @@ return {
       vim.api.nvim_set_hl(0, "GitSignsDeleteNr",  { fg = "#f44747", bg = base_bg })
 
       -- Neogit diff views with styled theme
-      vim.api.nvim_set_hl(0, "NeogitDiffAdd", {
-        fg = "#9ece6a", bg = "#2a3c2a", bold = false
-      })
-      vim.api.nvim_set_hl(0, "NeogitDiffDelete", {
-        fg = "#f44747", bg = "#402424", bold = false
-      })
-      vim.api.nvim_set_hl(0, "NeogitDiffContextHighlight", {
-        bg = "#262626"  -- Dim background for unchanged lines
-      })
-      vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", {
-        fg = "#9ece6a", bg = "#2a3c2a", bold = false
-      })
-      vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", {
-        fg = "#f44747", bg = "#402424", bold = false
-      })
+      -- vim.api.nvim_set_hl(0, "NeogitDiffAdd", {
+      --   fg = "#9ece6a", bg = "#2a3c2a", bold = false
+      -- })
+      -- vim.api.nvim_set_hl(0, "NeogitDiffDelete", {
+      --   fg = "#f44747", bg = "#402424", bold = false
+      -- })
+      -- vim.api.nvim_set_hl(0, "NeogitDiffContextHighlight", {
+      --   bg = "#262626"  -- Dim background for unchanged lines
+      -- })
+      -- vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", {
+      --   fg = "#9ece6a", bg = "#2a3c2a", bold = false
+      -- })
+      -- vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", {
+      --   fg = "#f44747", bg = "#402424", bold = false
+      -- })
     end,
   },
 }
