@@ -92,6 +92,12 @@ local function load_keymaps()
     ["<leader>gb"] = { "<cmd>Git blame<CR>", "Git [B]lame" },
     ["<leader>gd"] = { "<cmd>Gvdiffsplit<CR>", "Git [D]iff" },
     
+    -- C++ specific
+    ["<leader>ch"] = { "<cmd>ClangdSwitchSourceHeader<CR>", "Switch between [H]eader and source" },
+    ["<leader>ci"] = { "<cmd>ClangdSymbolInfo<CR>", "Symbol [I]nfo" },
+    ["<leader>cm"] = { "<cmd>ClangdMemoryUsage<CR>", "[M]emory usage" },
+    ["<leader>ct"] = { "<cmd>ClangdTypeHierarchy<CR>", "[T]ype hierarchy" },
+    
     -- Utilities
     ["<leader>u"] = { utils.open_url, "Open [U]RL under cursor" },
     ["<leader>q"] = { utils.smart_quit, "[Q]uit" },
@@ -114,6 +120,13 @@ local function load_keymaps()
   }
   
   wk.register(terminal_mappings, { mode = "t" })
+  
+  -- Insert mode mappings
+  local insert_mappings = {
+    ["<C-Del>"] = { "<C-o>dw", "Delete word forward" },
+  }
+  
+  wk.register(insert_mappings, { mode = "i" })
 end
 
 M.setup = function()

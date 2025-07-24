@@ -1,6 +1,6 @@
 return {
   "yetone/avante.nvim",
-  -- enabled=false,
+  enabled=false,
   -- You can re-enable build if needed later
   build = function()
     if vim.fn.has("win32") == 1 then
@@ -51,13 +51,13 @@ return {
         },
       },
     },
-    {
-      'MeanderingProgrammer/render-markdown.nvim',
-      opts = {
-        file_types = { "markdown" }, -- Removed "Avante" unless you define it elsewhere
-      },
-      ft = { "markdown" },
-    },
+    -- {
+    --   'MeanderingProgrammer/render-markdown.nvim',
+    --   opts = {
+    --     file_types = { "markdown" }, -- Removed "Avante" unless you define it elsewhere
+    --   },
+    --   ft = { "markdown" },
+    -- },
   },
 }
 
