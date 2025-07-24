@@ -43,6 +43,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'debugpy',
+        'codelldb', -- C++ debugger
       },
     }
 
@@ -93,5 +94,43 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+
+    -- C++ debugging configuration
+    dap.adapters.codelldb = {
+      type = 'server',
+      port = "${port}",
+      executable = {
+        command = vim.fn.exepath('codelldb'),
+        args = {"--port", "${port}"},
+      }
+    }
+
+    dap.configurations.cpp = {
+      {
+        name = "Launch file",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+      },
+      {
+        name = "Attach to gdbserver :1234",
+        type = "codelldb",
+        request = "launch",
+        MIMode = "gdb",
+        miDebuggerServerAddress = "localhost:1234",
+        miDebuggerPath = "/usr/bin/gdb",
+        cwd = '${workspaceFolder}',
+        program = function()
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+      },
+    }
+
+    -- Use same config for C
+    dap.configurations.c = dap.configurations.cpp
   end,
 }

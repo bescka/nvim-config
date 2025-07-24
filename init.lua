@@ -4,4 +4,5 @@ require("config.autocmd")
 require("config.functions")
 require("config.luasnip")
 
+vim.opt.swapfile = false
 

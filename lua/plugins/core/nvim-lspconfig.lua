@@ -180,11 +180,21 @@ config = function()
         "--completion-style=detailed",
         "--function-arg-placeholders",
         "--fallback-style=llvm",
+        "--cross-file-rename",
+        "--all-scopes-completion",
+        "--suggest-missing-includes",
+        "--pch-storage=memory",
       },
       init_options = {
         usePlaceholders = true,
         completeUnimported = true,
         clangdFileStatus = true,
+        semanticHighlighting = true,
+      },
+      capabilities = {
+        textDocument = {
+          semanticHighlighting = true,
+        },
       },
     },
     pyright = {},
@@ -198,6 +208,9 @@ config = function()
     yamlls = {},
     marksman = {},
     dockerls = {},
+    graphql = {
+      filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+    },
     -- rust_analyzer = {},
     -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
     --
@@ -254,6 +267,7 @@ config = function()
     'eslint_d',
     'shfmt',
     'clang-format', -- Add clang-format for C/C++ formatting
+    'cppcheck', -- C++ static analysis
   }
   
   -- Setup mason-tool-installer with the tools list
