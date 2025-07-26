@@ -14,7 +14,7 @@ return {
       debounce = 100,
     },
     anti_conceal = {
-      enabled = false,
+      enabled = true,
     },
     latex = {
       enabled = false,
