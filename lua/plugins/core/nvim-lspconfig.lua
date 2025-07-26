@@ -266,8 +266,8 @@ config = function()
     'prettier',
     'eslint_d',
     'shfmt',
-    'clang-format', -- Add clang-format for C/C++ formatting
-    'cppcheck', -- C++ static analysis
+    'clang-format', -- C/C++ formatting
+    -- Note: clang-tidy is included with clangd language server
   }
   
   -- Setup mason-tool-installer with the tools list

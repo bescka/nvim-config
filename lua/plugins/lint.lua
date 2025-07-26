@@ -14,8 +14,8 @@ return {
         typescriptReact = { 'eslint_d' },
         sh = { 'shellcheck' },
         bash = { 'shellcheck' },
-        c = { 'cppcheck' },
-        cpp = { 'cppcheck' },
+        c = { 'clangtidy' },
+        cpp = { 'clangtidy' },
       }
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
