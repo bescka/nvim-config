@@ -86,11 +86,11 @@ local function load_keymaps()
     ["<leader>tt"] = { "<cmd>ToggleTerm<CR>", "[T]erminal" },
     
     -- Git
-    ["<leader>gs"] = { "<cmd>Git<CR>", "Git [S]tatus" },
-    ["<leader>gc"] = { "<cmd>Git commit<CR>", "Git [C]ommit" },
-    ["<leader>gp"] = { "<cmd>Git push<CR>", "Git [P]ush" },
-    ["<leader>gb"] = { "<cmd>Git blame<CR>", "Git [B]lame" },
-    ["<leader>gd"] = { "<cmd>Gvdiffsplit<CR>", "Git [D]iff" },
+    ["<leader>gs"] = { "<cmd>Neogit<CR>", "Git [S]tatus" },
+    ["<leader>gc"] = { "<cmd>Neogit commit<CR>", "Git [C]ommit" },
+    ["<leader>gp"] = { "<cmd>Neogit push<CR>", "Git [P]ush" },
+    ["<leader>gb"] = { "<cmd>Gitsigns blame_line<CR>", "Git [B]lame" },
+    ["<leader>gd"] = { "<cmd>Gitsigns diffthis<CR>", "Git [D]iff" },
     
     -- C++ specific
     ["<leader>ch"] = { "<cmd>ClangdSwitchSourceHeader<CR>", "Switch between [H]eader and source" },

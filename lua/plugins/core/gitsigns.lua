@@ -9,7 +9,7 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     version = '*',  -- Use the latest version
-    enabled = false, -- Temporarily disable the plugin
+    enabled = true, -- Enable the plugin
     opts = {
       -- Use Lua's built-in system command implementation instead of Vimscript
       _system = function(cmd, callback)
