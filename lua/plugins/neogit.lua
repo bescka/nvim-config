@@ -14,7 +14,7 @@ return {
       
       -- Quick commit with message prompt
       vim.keymap.set('n', '<leader>cc', function()
-        vim.ui.input({ prompt = 'Commit message: ' }, function(input)
+        vim.ui.input({ prompt = 'Quick Commit -- Message: ' }, function(input)
           if input and input ~= '' then
             vim.fn.system('git add .')
             vim.fn.system('git commit -m "' .. input .. '"')
@@ -28,7 +28,7 @@ return {
           if input and input ~= '' then
             vim.fn.system('git add .')
             vim.fn.system('git commit -m "' .. input .. '"')
-            vim.fn.system('git push')
+            require('neogit').action('push', 'push_current')()
           end
         end)
       end, { desc = 'Quick commit and push' })
