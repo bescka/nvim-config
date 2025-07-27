@@ -11,5 +11,26 @@ return {
         }
       })
       vim.keymap.set('n', '<leader>g', vim.cmd.Neogit, { desc = 'neogit'})
+      
+      -- Quick commit with message prompt
+      vim.keymap.set('n', '<leader>cc', function()
+        vim.ui.input({ prompt = 'Commit message: ' }, function(input)
+          if input and input ~= '' then
+            vim.fn.system('git add .')
+            vim.fn.system('git commit -m "' .. input .. '"')
+          end
+        end)
+      end, { desc = 'Quick commit' })
+      
+      -- Quick commit and push
+      vim.keymap.set('n', '<leader>cp', function()
+        vim.ui.input({ prompt = 'Commit message: ' }, function(input)
+          if input and input ~= '' then
+            vim.fn.system('git add .')
+            vim.fn.system('git commit -m "' .. input .. '"')
+            vim.fn.system('git push')
+          end
+        end)
+      end, { desc = 'Quick commit and push' })
     end
   }

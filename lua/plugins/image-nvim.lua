@@ -1,6 +1,6 @@
 return {
   "3rd/image.nvim",
-  enabled = false,  -- Disable image.nvim to fix terminal size errors
+  enabled = true,
   opts = {
     backend = "kitty", -- or wezterm / iTerm2
     integrations = {
