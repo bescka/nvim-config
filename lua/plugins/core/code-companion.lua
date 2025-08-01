@@ -14,7 +14,8 @@ return {
         openai = function()
           return require("codecompanion.adapters").extend("openai", {
             env = {
-              api_key = 'cmd:"op read op://dev/OpenAI/credential --no-newline"'
+              api_key = vim.fn.system("op read op://dev/OpenAI2/credential --no-newline"):gsub("%s+$", "")
+              -- api_key = 'cmd:"op read op://dev/OpenAI2/credential --no-newline"'
             },
             schema = {
               model = {
