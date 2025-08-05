@@ -184,6 +184,7 @@ config = function()
         "--all-scopes-completion",
         "--suggest-missing-includes",
         "--pch-storage=memory",
+        "--query-driver=/usr/bin/g++",
       },
       init_options = {
         usePlaceholders = true,
@@ -218,7 +219,7 @@ config = function()
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`tsserver`) will work just fine
-    -- tsserver = {},
+    tsserver = {},
       -- Add Tailwind CSS Language Server
     tailwindcss = {
       filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },

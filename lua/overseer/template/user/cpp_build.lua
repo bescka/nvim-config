@@ -2,7 +2,7 @@ return {
   name = "cpp build",
   builder = function()
     local file = vim.fn.expand("%:p")
-    local file_no_ext = vim.fn.expand("%:r")
+    local file_no_ext = vim.fn.expand("%:p:r")
     
     -- Check for available compilers
     local compiler = "g++"
@@ -10,7 +10,7 @@ return {
       compiler = vim.fn.input("Compiler (g++/clang++): ", "g++")
     end
     
-    local std_version = vim.fn.input("C++ Standard (17/20/23): ", "17")
+    local std_version = vim.fn.input("C++ Standard (17/20/23): ", "23")
     
     return {
       name = "Build C++ (" .. compiler .. ")",
@@ -22,6 +22,7 @@ return {
         "-Wpedantic",
         "-g", 
         "-O0",
+        "-fsanitize=address",
         "-o", 
         file_no_ext, 
         file 
