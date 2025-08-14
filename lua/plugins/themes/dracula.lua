@@ -2,20 +2,37 @@ return {
   "Mofiqul/dracula.nvim",
     config = function()
       require("dracula").setup({
-        -- customize dracula color palette
         colors = {},
-        -- show the '~' characters after the end of buffers
         show_end_of_buffer = true, -- default false
-        -- use transparent background
         transparent_bg = true, -- default false
-        -- set custom lualine background color
         lualine_bg_color = "#44475a", -- default nil
-        -- set italic comment
-        italic_comment = true, -- default false
+        italic_comment = true, -- default false,
+        overrides = function(colors)
+          return {
+            -- Basic diff highlights
+            DiffAdd = { bg = '#34462F' },
+            DiffDelete = { bg = '#462F2F' },
+            DiffChange = { bg = '#2F4146' },
+            DiffText = { bg = '#463C2F' },
+            
+            -- Diffview specific highlights
+            DiffAdded = { fg = colors.green, bold = true },
+            DiffRemoved = { fg = colors.red, bold = true },
+            DiffChanged = { fg = colors.orange, bold = true },
+            
+            DiffviewWinSeparator = { fg = colors.comment },
+            DiffviewDiffDelete = { fg = colors.comment },
+            DiffviewFilePanelSelected = { fg = colors.cyan },
+            
+            DiffviewStatusAdded = { fg = colors.green, bold = true },
+            DiffviewStatusUntracked = { fg = colors.yellow, bold = true },
+            DiffviewStatusModified = { fg = colors.orange, bold = true },
+            DiffviewStatusRenamed = { fg = colors.green, bold = true },
+            DiffviewStatusDeleted = { fg = colors.red, bold = true },
+            DiffviewStatusIgnored = { fg = colors.comment, bold = true },
+          }
+        end,
       })
-      -- -- vim.g.dracula_variant = "soft"
-      -- -- vim.cmd([[colorscheme dracula-soft]])
-      --
       -- Dracula color palette for markdown
       local dracula_bg = "#282a36"
       local dracula_purple = "#bd93f9"
@@ -26,7 +43,7 @@ return {
       local dracula_red = "#ff5555"
       local dracula_yellow = "#f1fa8c"
       --
-      -- -- Diff highlights with Dracula colors
+      -- Diff highlights with Dracula colors
       -- vim.api.nvim_set_hl(0, "DiffAdd", {
       --   fg = dracula_green,
       --   bg = "#2a4332",
@@ -91,6 +108,7 @@ return {
       --   bold = false,
       -- })
       --
+    --
       -- -- RenderMarkdown highlight groups for Dracula theme
       vim.api.nvim_set_hl(0, "RenderMarkdownH1", { fg = dracula_purple })
       vim.api.nvim_set_hl(0, "RenderMarkdownH2", { fg = dracula_pink })
