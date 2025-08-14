@@ -124,6 +124,10 @@ return {
       vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { bg = "#4a3628" })
       vim.api.nvim_set_hl(0, "RenderMarkdownH6Bg", { bg = "#4a2828" })
 
+      -- Code block highlighting
+      vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#1e1f29" })
+      vim.api.nvim_set_hl(0, "RenderMarkdownCodeInline", { bg = "#1e1f29", fg = dracula_cyan })
+
       vim.cmd.colorscheme("dracula-soft")
       -- Make cursor line more transparent for better comment readability
       vim.api.nvim_set_hl(0, "CursorLine", { bg = "#44475a", blend = 99 })

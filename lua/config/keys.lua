@@ -58,14 +58,10 @@ local function load_keymaps()
 		["<leader>lr"] = { vim.lsp.buf.references, "[R]eferences" },
 
 		-- Window management
-		["<C-w><C-h>"] = { "<C-w><C-h>", "Move to left window" },
-		["<C-w><C-l>"] = { "<C-w><C-l>", "Move to right window" },
-		["<C-w><C-j>"] = { "<C-w><C-j>", "Move to lower window" },
-		["<C-w><C-k>"] = { "<C-w><C-k>", "Move to upper window" },
-		["<C-w>h"] = { "<C-w>h", "Move to left window" },
-		["<C-w>l"] = { "<C-w>l", "Move to right window" },
-		["<C-w>j"] = { "<C-w>j", "Move to lower window" },
-		["<C-w>k"] = { "<C-w>k", "Move to upper window" },
+		["<leader>wh"] = { "<C-w><C-h>", "Move to left window" },
+		["<leader>wl"] = { "<C-w><C-l>", "Move to right window" },
+		["<leader>wj"] = { "<C-w><C-j>", "Move to lower window" },
+		["<leader>wk"] = { "<C-w><C-k>", "Move to upper window" },
 		["<leader>we"] = { "<cmd>wincmd =<CR>", "Equalize windows" },
 		["<leader>ws"] = { "<cmd>split<CR>", "Split window horizontally" },
 		["<leader>wv"] = { "<cmd>vsplit<CR>", "Split window vertically" },
@@ -88,6 +84,7 @@ local function load_keymaps()
 		["<leader>tz"] = { utils.toggle_zen_mode, "[Z]en mode" },
 		["<leader>tq"] = { utils.toggle_quickfix, "[Q]uickfix" },
 		["<leader>tt"] = { "<cmd>ToggleTerm<CR>", "[T]erminal" },
+		["<leader>tm"] = { "<cmd>RenderMarkdown toggle<CR>", "Toggle [M]arkdown rendering" },
 
 		-- Git
 		["<leader>gs"] = { "<cmd>Neogit<CR>", "Git [S]tatus" },
