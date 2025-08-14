@@ -205,7 +205,9 @@ config = function()
     rust_analyzer = {},
 
     -- sqls = {},
-    jsonls = {},
+    jsonls = {
+      filetypes = { "json", "jsonc" },
+    },
     yamlls = {},
     marksman = {},
     dockerls = {},
