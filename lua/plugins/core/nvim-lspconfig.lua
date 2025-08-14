@@ -219,7 +219,7 @@ config = function()
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`tsserver`) will work just fine
-    tsserver = {},
+    -- tsserver = {}, -- Disabled in favor of typescript-tools.nvim
       -- Add Tailwind CSS Language Server
     tailwindcss = {
       filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },

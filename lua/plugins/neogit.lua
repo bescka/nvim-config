@@ -10,10 +10,10 @@ return {
           diffview = true  -- Integrate with diffview.nvim
         }
       })
-      vim.keymap.set('n', '<leader>g', vim.cmd.Neogit, { desc = 'neogit'})
+      vim.keymap.set('n', '<leader>n', vim.cmd.Neogit, { desc = 'neogit'})
       
       -- Quick commit with message prompt
-      vim.keymap.set('n', '<leader>cc', function()
+      vim.keymap.set('n', '<leader>gq', function()
         vim.ui.input({ prompt = 'Quick Commit -- Message: ' }, function(input)
           if input and input ~= '' then
             vim.fn.system('git add .')
@@ -23,7 +23,7 @@ return {
       end, { desc = 'Quick commit' })
       
       -- Quick commit and push
-      vim.keymap.set('n', '<leader>cp', function()
+      vim.keymap.set('n', '<leader>gqp', function()
         vim.ui.input({ prompt = 'Commit message: ' }, function(input)
           if input and input ~= '' then
             vim.fn.system('git add .')

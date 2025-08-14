@@ -1,6 +1,7 @@
 return {
   'pmizio/typescript-tools.nvim',
   dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+  ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
   opts = {
     settings = {
       -- spawn additional tsserver instance to calculate diagnostics on it
@@ -24,8 +25,13 @@ return {
       tsserver_max_memory = "auto",
       -- described below
       tsserver_format_options = {},
-      tsserver_file_preferences = {},
-      -- mirror of VSCode's TypeScript preferences
+      tsserver_file_preferences = {
+        -- Enable better IntelliSense and hover information
+        includeCompletionsForModuleExports = true,
+        includeCompletionsForImportStatements = true,
+        includeCompletionsWithSnippetText = true,
+        includeAutomaticOptionalChainCompletions = true,
+      },
       tsserver_inlay_hints = {
         includeInlayParameterNameHints = 'all',
         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
