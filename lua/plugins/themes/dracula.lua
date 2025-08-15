@@ -1,6 +1,5 @@
 return {
-  "Mofiqul/dracula.nvim",
-    config = function()
+  "Mofiqul/dracula.nvim", config = function()
       require("dracula").setup({
         colors = {},
         show_end_of_buffer = true, -- default false
@@ -131,6 +130,40 @@ return {
       vim.cmd.colorscheme("dracula-soft")
       -- Make cursor line more transparent for better comment readability
       vim.api.nvim_set_hl(0, "CursorLine", { bg = "#44475a", blend = 99 })
+      
+      -- Comment visibility options (uncomment one):
+      -- Option 1: Faded yellow
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#b8a965", italic = true })
+      
+      -- Option 2: Faded blue  
+      vim.api.nvim_set_hl(0, "Comment", { fg = "#8fa1c9", italic = true })
+      
+      -- Option 3: Slightly more visible grey
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#7d8390", italic = true })
+      
+      -- Option 4: Warmer grey with slight yellow tint
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#8a8576", italic = true })
+      
+      -- Option 5: Faded purple
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#a48cc7", italic = true })
+      
+      -- Option 6: Faded indigo
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#7f85b8", italic = true })
+      
+      -- Option 7: Darker indigo
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#6b7196", italic = true })
+      
+      -- Option 8: Lighter indigo
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#9199d4", italic = true })
+      
+      -- Option 9: Purple-indigo
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#8a7cb8", italic = true })
+      
+      -- Option 10: Deeper purple-indigo
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#7a6ba8", italic = true })
+      
+      -- Option 11: Softer purple-indigo
+      -- vim.api.nvim_set_hl(0, "Comment", { fg = "#9a8dc8", italic = true })
       -- 
     end,
 }

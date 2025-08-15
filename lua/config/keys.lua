@@ -11,7 +11,7 @@ local function load_keymaps()
 		["<leader>d"] = { name = "[D]ocument" },
 		["<leader>f"] = { name = "[F]ind" },
 		["<leader>g"] = { name = "[G]it" },
-		["<leader>l"] = { name = "[L]SP" },
+		["<leader>p"] = { name = "LSP" },
 		["<leader>s"] = { name = "[S]earch" },
 		["<leader>t"] = { name = "[T]oggle" },
 		["<leader>w"] = { name = "[W]indow" },
@@ -47,15 +47,15 @@ local function load_keymaps()
 		["]d"] = { vim.diagnostic.goto_next, "Next [D]iagnostic" },
 
 		-- LSP
-		["<leader>lr"] = { vim.lsp.buf.rename, "[R]ename symbol" },
-		["<leader>lh"] = { utils.toggle_inlay_hints, "Toggle inlay [H]ints" },
-		["<leader>lj"] = { vim.lsp.buf.definition, "[J]ump to definition" },
-		["<leader>lk"] = { vim.lsp.buf.hover, "Show [K]ind info" },
-		["<leader>la"] = { vim.lsp.buf.code_action, "Code [A]ction" },
-		["<leader>ls"] = { vim.lsp.buf.signature_help, "[S]ignature help" },
-		["<leader>li"] = { vim.lsp.buf.implementation, "[I]mplementation" },
-		["<leader>lt"] = { vim.lsp.buf.type_definition, "[T]ype definition" },
-		["<leader>lr"] = { vim.lsp.buf.references, "[R]eferences" },
+		["<leader>pr"] = { vim.lsp.buf.rename, "[R]ename symbol" },
+		["<leader>ph"] = { utils.toggle_inlay_hints, "Toggle inlay [H]ints" },
+		["<leader>pj"] = { vim.lsp.buf.definition, "[J]ump to definition" },
+		["<leader>pk"] = { vim.lsp.buf.hover, "Show [K]ind info" },
+		["<leader>pa"] = { vim.lsp.buf.code_action, "Code [A]ction" },
+		["<leader>ps"] = { vim.lsp.buf.signature_help, "[S]ignature help" },
+		["<leader>pi"] = { vim.lsp.buf.implementation, "[I]mplementation" },
+		["<leader>pt"] = { vim.lsp.buf.type_definition, "[T]ype definition" },
+		["<leader>pf"] = { vim.lsp.buf.references, "Re[f]erences" },
 
 		-- Window management
 		["<leader>wh"] = { "<C-w><C-h>", "Move to left window" },
@@ -70,6 +70,7 @@ local function load_keymaps()
 		["<leader>w]"] = { "<cmd>vertical wincmd ]<CR>", "Open tag in vertical split" },
 
 		-- Find/Search with Telescope
+		["<leader>l"] = { "<cmd>Telescope find_files<CR>", "Find files" },
 		["<leader>ff"] = { "<cmd>Telescope find_files<CR>", "[F]ind [F]iles" },
 		["<leader>fb"] = { "<cmd>Telescope buffers<CR>", "[F]ind [B]uffers" },
 		["<leader>fg"] = { "<cmd>Telescope live_grep<CR>", "[F]ind by [G]rep" },

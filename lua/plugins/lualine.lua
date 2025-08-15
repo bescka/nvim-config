@@ -6,13 +6,32 @@ return {
           theme = 'auto',
         },
         sections = {
-          lualine_x = {
+          lualine_b = {
             {
-              require("noice").api.statusline.mode.get,
-              cond = require("noice").api.statusline.mode.has,
-              -- color = { fg = "#ff9e64" },
+              'filename',
+              path = 1,
+              shorting_target = 0,
             }
           },
+          lualine_a = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {'progress'},
+          lualine_z = {'location'},
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {
+            {
+              'filename',
+              path = 1,
+              shorting_target = 0,
+            }
+          },
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
         },
       }
     end,
