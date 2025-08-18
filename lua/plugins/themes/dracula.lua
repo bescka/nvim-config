@@ -164,6 +164,23 @@ return {
       
       -- Option 11: Softer purple-indigo
       -- vim.api.nvim_set_hl(0, "Comment", { fg = "#9a8dc8", italic = true })
+      
+      -- Noice.nvim command line popup styling (: input box)
+      -- Using DiagnosticInfo highlight group that noice references
+      vim.api.nvim_set_hl(0, "DiagnosticInfo", { 
+        fg = dracula_cyan,  -- Cyan text for the border
+        bg = dracula_bg     -- Dark background
+      })
+      
+      -- Additional command line styling for better Dracula integration
+      vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { 
+        bg = dracula_bg,    -- Dark background for popup
+        fg = dracula_purple -- Purple text
+      })
+      vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { 
+        fg = dracula_purple, -- Purple border
+        bg = dracula_bg
+      })
       -- 
     end,
 }
