@@ -73,7 +73,8 @@ return { -- Autocompletion
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<CR>'] = cmp.mapping.confirm { select = true },
+          ['<S-CR>'] = cmp.mapping.confirm {select = true},
+          -- ['<CR>'] = cmp.mapping.confirm { select = true },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
@@ -112,6 +113,7 @@ return { -- Autocompletion
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = "neorg" },
           -- {name = 'from_directory', path = "~/.config/nvim/LuaSnip"}
         },
       }

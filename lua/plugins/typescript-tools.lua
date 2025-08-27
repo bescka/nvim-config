@@ -2,8 +2,26 @@ return {
   'pmizio/typescript-tools.nvim',
   dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
   ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
-  opts = {
-    settings = {
+  config = function()
+    require('typescript-tools').setup {
+      on_attach = function(client, bufnr)
+        local map = function(keys, func, desc)
+          vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
+        end
+        
+        map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+        map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+        map('<C-]>', require('telescope.builtin').lsp_references, 'Follow References')
+        map('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+        map('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+        map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+        map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+        map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+        map('K', vim.lsp.buf.hover, 'Hover Documentation')
+        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+      end,
+      settings = {
       -- spawn additional tsserver instance to calculate diagnostics on it
       separate_diagnostic_server = true,
       -- "change"|"insert_leave" determine when the client asks the server about diagnostic changes
@@ -41,6 +59,8 @@ return {
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayEnumMemberValueHints = true,
       },
-    },
-  },
-} 
+    }
+  }
+  end,
+}
+

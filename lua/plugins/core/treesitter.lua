@@ -13,6 +13,15 @@ return { -- Highlight, edit, and navigate code
         additional_vim_regex_highlighting = { 'ruby', 'markdown' },
       },
       indent = { enable = true, disable = { 'ruby', 'c', 'cpp' } },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = 'gns',
+          node_incremental = 'gni',
+          scope_incremental = 'gnc',
+          node_decremental = 'gnd',
+        },
+      },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
