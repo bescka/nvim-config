@@ -149,14 +149,13 @@ config = function()
   capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
   -- Configure LSP diagnostic display
-  vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-      virtual_text = false,
-      signs = true,
-      underline = true,
-      update_in_insert = false,
-    }
-  )
+  vim.diagnostic.config({
+    virtual_text = false,
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+  })
 
   -- Enable the following language servers
   --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -276,11 +275,9 @@ config = function()
   -- Setup mason-tool-installer with the tools list
   require('mason-tool-installer').setup { ensure_installed = tools_ensure_installed }
 
-  -- Setup mason-lspconfig with only the LSP servers list and fix automatic_enable
+  -- Setup mason-lspconfig with only the LSP servers list
   require('mason-lspconfig').setup {
     ensure_installed = ensure_installed,
-    -- Disable automatic_enable to prevent using vim.lsp.enable which is only available in Neovim 0.10+
-    automatic_enable = false,
     handlers = {
       function(server_name)
         local server = servers[server_name] or {}
