@@ -92,7 +92,11 @@ local function load_keymaps()
 		["<leader>gc"] = { "<cmd>Neogit commit<CR>", "Git [C]ommit" },
 		["<leader>gp"] = { "<cmd>Neogit push<CR>", "Git [P]ush" },
 		["<leader>gb"] = { "<cmd>Gitsigns blame_line<CR>", "Git [B]lame" },
+		["<leader>gtb"] = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "[T]oggle [B]lame" },
 		["<leader>gd"] = { "<cmd>Gitsigns diffthis<CR>", "Git [D]iff" },
+		["<leader>gx"] = { "<cmd>GitConflictListQf<CR>", "List git conflicts" },
+		["]x"] = { "<cmd>GitConflictNextConflict<CR>", "Next git conflict" },
+		["[x"] = { "<cmd>GitConflictPrevConflict<CR>", "Previous git conflict" },
 
 		-- C++ specific
 		["<leader>ch"] = { "<cmd>ClangdSwitchSourceHeader<CR>", "Switch between [H]eader and source" },
