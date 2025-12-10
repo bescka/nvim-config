@@ -39,6 +39,9 @@ return { -- Autocompletion
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+
+      -- Load lua snippets from ~/.config/nvim/lua/snippets/
+      require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/lua/snippets" })
       require('luasnip').filetype_extend("javascriptreact", { "html" })
       -- Function to check if the cursor is inside a math class
       local function is_in_math_class()

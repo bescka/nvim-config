@@ -2,11 +2,11 @@ return {
   'stevearc/overseer.nvim',
   cmd = { 'OverseerRun', 'OverseerToggle', 'OverseerOpen' },
   keys = {
-    { '<leader>rr', '<cmd>OverseerRun<cr>', desc = '[R]un task' },
-    { '<leader>rt', '<cmd>OverseerToggle<cr>', desc = '[T]oggle task list' },
-    { '<leader>ro', '<cmd>OverseerOpen<cr>', desc = '[O]pen task list' },
-    { '<leader>rc', '<cmd>OverseerClose<cr>', desc = '[C]lose task list' },
-    { '<leader>rb', '<cmd>OverseerBuild<cr>', desc = '[B]uild current file' },
+    { '<leader>or', '<cmd>OverseerRun<cr>', desc = '[R]un task' },
+    { '<leader>ot', '<cmd>OverseerToggle<cr>', desc = '[T]oggle task list' },
+    { '<leader>oo', '<cmd>OverseerOpen<cr>', desc = '[O]pen task list' },
+    { '<leader>oc', '<cmd>OverseerClose<cr>', desc = '[C]lose task list' },
+    { '<leader>ob', '<cmd>OverseerBuild<cr>', desc = '[B]uild current file' },
   },
   opts = {
     templates = {
@@ -14,6 +14,7 @@ return {
       'user.cpp_build',
       'user.cpp_build_release',
       'user.cpp_run',
+      'user.cpp_test',
       'user.cmake_build',
       'user.make_build',
     },
@@ -87,6 +88,7 @@ return {
     overseer.load_template('user.cpp_build')
     overseer.load_template('user.cpp_build_release')
     overseer.load_template('user.cpp_run')
+    overseer.load_template('user.cpp_test')
     overseer.load_template('user.cmake_build')
     overseer.load_template('user.make_build')
   end,

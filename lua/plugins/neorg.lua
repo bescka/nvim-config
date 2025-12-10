@@ -1,7 +1,15 @@
 return {
   "nvim-neorg/neorg",
+  enabled=true,
   lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
   version = "*", -- Pin Neorg to the latest stable release
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "vhyrro/lua-utils.nvim",
+    "nvim-neotest/nvim-nio",
+    "MunifTanjim/nui.nvim",
+    "pysan3/pathlib.nvim",
+  },
   opts = {
     load = {
       ["core.defaults"] = {},
@@ -21,7 +29,7 @@ return {
           renderer = "core.integrations.image", 
           scale = 1
         }
-      },     
+      },
       ["core.integrations.nvim-cmp"] = {},
       ["core.dirman"] = {
         config = {
