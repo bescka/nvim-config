@@ -224,8 +224,9 @@ config = function()
       -- Add Tailwind CSS Language Server
     tailwindcss = {
       filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-      -- You can add specific settings if needed here
     },
+
+    texlab = {},
 
     -- cypress_ls = {
     --     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },

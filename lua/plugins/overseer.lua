@@ -84,12 +84,6 @@ return {
     local overseer = require('overseer')
     overseer.setup(opts)
     
-    -- Load custom templates
-    overseer.load_template('user.cpp_build')
-    overseer.load_template('user.cpp_build_release')
-    overseer.load_template('user.cpp_run')
-    overseer.load_template('user.cpp_test')
-    overseer.load_template('user.cmake_build')
-    overseer.load_template('user.make_build')
+    -- Templates are automatically loaded from opts.templates above
   end,
 }

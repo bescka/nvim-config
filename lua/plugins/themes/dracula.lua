@@ -107,27 +107,27 @@ return {
       --   bold = false,
       -- })
       --
-    --
-      -- -- RenderMarkdown highlight groups for Dracula theme
-      vim.api.nvim_set_hl(0, "RenderMarkdownH1", { fg = dracula_purple })
-      vim.api.nvim_set_hl(0, "RenderMarkdownH2", { fg = dracula_pink })
-      vim.api.nvim_set_hl(0, "RenderMarkdownH3", { fg = dracula_cyan })
-      vim.api.nvim_set_hl(0, "RenderMarkdownH4", { fg = dracula_green })
-      vim.api.nvim_set_hl(0, "RenderMarkdownH5", { fg = dracula_orange })
-      vim.api.nvim_set_hl(0, "RenderMarkdownH6", { fg = dracula_red })
-      --
+
       vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { bg = "#3c2e5a" })
       vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { bg = "#4a2b48" })
       vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { bg = "#2b4a4a" })
       vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { bg = "#2a4332" })
       vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { bg = "#4a3628" })
       vim.api.nvim_set_hl(0, "RenderMarkdownH6Bg", { bg = "#4a2828" })
+      -- RenderMarkdown highlight groups for Dracula theme (must be after colorscheme load)
+      vim.api.nvim_set_hl(0, "RenderMarkdownH1", { fg = dracula_purple })
+      vim.api.nvim_set_hl(0, "RenderMarkdownH2", { fg = dracula_pink })
+      vim.api.nvim_set_hl(0, "RenderMarkdownH3", { fg = dracula_cyan })
+      vim.api.nvim_set_hl(0, "RenderMarkdownH4", { fg = dracula_green })
+      vim.api.nvim_set_hl(0, "RenderMarkdownH5", { fg = dracula_orange })
+      vim.api.nvim_set_hl(0, "RenderMarkdownH6", { fg = dracula_red })
+
+      vim.cmd.colorscheme("dracula-soft")
+      
 
       -- Code block highlighting
       vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#1e1f29" })
       vim.api.nvim_set_hl(0, "RenderMarkdownCodeInline", { bg = "#1e1f29", fg = dracula_cyan })
-
-      vim.cmd.colorscheme("dracula-soft")
       -- Make cursor line more transparent for better comment readability
       vim.api.nvim_set_hl(0, "CursorLine", { bg = "#44475a", blend = 99 })
       

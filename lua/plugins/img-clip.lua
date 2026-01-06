@@ -15,9 +15,11 @@ return {
     filetypes = {
       norg = {
         template = ".image $FILE_PATH",
+        dir_path = "_images",
       },
       markdown = {
         template = "![]($FILE_PATH)",
+        dir_path = "_images",
       },
     },
   },
